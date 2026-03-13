@@ -1,4 +1,21 @@
-﻿ESTRUCTURA DEL PROYECTO
+﻿CARACTERISTICAS IMPLEMENTADAS EN EL PROYECTO
+
+- Proyecto Web API
+
+- Modelo
+
+- Contexto
+
+- Conexión a SQL Server
+
+- Controller CRUD
+
+- Migración
+
+- PruebaS con Swagger
+
+
+ESTRUCTURA DEL PROYECTO
 
 - Models/Producto.cs
 
@@ -10,6 +27,8 @@
 
 - appsettings.json
 
+
+PROCESO DE CREACIÓN DEL PROYECTO
 
 1 - Instalar los paquetes NuGet
 
