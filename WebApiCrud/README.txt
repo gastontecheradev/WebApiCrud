@@ -35,3 +35,54 @@
     }
 
 
+3 - Crear el contexto de la base de datos
+
+    - Crear la carpeta Data
+    - Crear la clase AppDbContext.cs dentro de la carpeta Data
+
+    using Microsoft.EntityFrameworkCore;
+    using WebApiCrud.Models;
+
+    namespace WebApiCrud.Data
+    {
+        public class AppDbContext : DbContext
+        {
+            public AppDbContext(DbContextOptions<AppDbContext> options)
+                : base(options)
+            {
+            }
+
+            public DbSet<Producto> Productos { get; set; }
+        }
+    }
+
+
+4 - Configurar la conexion en appsettings.json
+
+    "ConnectionStrings": {
+        "ConexionSql": "Server=(localdb)\\MSSQLLocalDB;Database=WebApiCrudDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
+      }
+
+
+
+5 - Agregar configuracion en Program.cs
+
+    using Microsoft.EntityFrameworkCore;
+    using WebApiCrud.Data;
+
+    builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
+
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+
+
+6 - Crear la Carpeta Controllers
+    
+    - Crear la clase ProductosController.cs dentro de la carpeta Controllers
