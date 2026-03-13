@@ -1,4 +1,4 @@
-﻿- ActionResult
+﻿- ActionResult<T>
 - context
 - SaveChangesAsync()
 - DbUpdateConcurrencyException

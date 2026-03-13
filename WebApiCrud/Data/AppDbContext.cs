@@ -7,7 +7,7 @@ namespace WebApiCrud.Data
     {
         // Constructor. Recibe la configuración del contexto y se la pasa a la clase base
         // ASP.NET Core, usando inyección de dependencias, le entrega al contexto la configuración para conectarse a SQL Server
-        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options) // Le dice a Entity Framework: Existe una tabla llamada Productos. Esa tabla se mapea con la clase Producto
         {
         }
         // Representa la colección de productos en la base

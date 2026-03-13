@@ -98,7 +98,7 @@ namespace WebApiCrud.Controllers
 
         private bool ProductoExiste(int id)
         {
-            return _context.Productos.Any(e => e.Id == id);
+            return _context.Productos.Any(e => e.Id == id); // Verificar si existe al menos un producto en la base de datos cuyo Id sea igual al id recibido
         }
     }
 }
